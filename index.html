@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css">
+
+    <link rel="stylesheet" href="css/presentation.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section class="slide1">
+          <h2>JSDoc: Generating API Documentation</h2>
+          <img src="lib/img/jsdoc.jpg" alt="JSDoc">
+        </section>
+        <section class="slide2">
+          <h3>Why do you need to document JavaScript projects?</h3>
+          <img src="lib/img/mob-programming.jpg" alt="Team discussion">
+        </section>
+        <section class="slide3">
+          <h3>When look in source code</h3>
+          <img src="lib/img/images (2).jpg" alt="Complex code">
+        </section>
+        <section class="slide4">
+          <h3>JSDoc is a way to write comments to describe the code</h3>
+          <img src="lib/img/shutterstock_86307856.jpg" alt="Easy reading code">
+        </section>
+        <section class="slide5">
+          <h3>Syntax</h3>
+            <div class="example">
+              <pre>
+                <code class="hljs" data-line-numbers="1-8">/**
+  * Sum numbers
+  * 
+  * @param {number} first - first number
+  * @param {number} second - second number
+  * @returns {number}
+*/
+  
+
+function add(first, second) {
+  return first + second;
+}
+</code></pre>
+            <div class="doclet">
+                <span>&#125;</span>
+                <span class="text">doclet</span>
+            </div>
+          </div>
+        </section>
+        <section class="slide6">
+            <h3>Examples of using</h3>
+            <div class="example">
+                <pre><code>/**
+ * Create instance of Circle.
+ *
+ * @constructor
+ * @this  {Circle}
+ * @param {number} r - Radius of circle.
+ */
+function Circle(r) {
+  /** @private */
+  this.radius = r;
+  
+  /** @private */
+  this.circumference = 2 * Math.PI * r;
+}</code></pre>
+          </div>
+        </section>
+        <section class="slide6">
+            <h3>Examples of using</h3>
+            <div class="example">
+                <pre><code>/**
+  * calculate Circle length
+  *
+  * @deprecated
+  * @this   {Circle}
+  * @return {number} Length of circle.
+  */
+Circle.prototype.calculateCircumference = function () {
+  return 2 * Math.PI * this.radius;
+};</code></pre>
+          </div>
+        </section>
+        <section class="slide6">
+            <h3>Examples of using</h3>
+              <div class="example">
+                  <pre><code>/**
+  * <tt>Present Circle in String.</tt>
+  *
+  * @override
+  * @this   {Circle}
+  * @return {string} Infomation of Circle.
+  */
+Circle.prototype.toString = function () {
+  return "A Circle object with radius of " + this.radius + ".";
+};</code></pre>
+          </div>
+        </section>
+        <section class="slide7">
+            <h3>Basic tags</h3>
+            <table class="tags-table">
+              <tr>
+                <td><span class="tag">@param</span> (synonyms: @arg, @argument)</td>
+                <td>Document the parameter to a function.</td>
+              </tr>
+              <tr>
+                <td><span class="tag">@returns</span>(synonyms: @return)</td>
+                <td>Document the return value of a function.</td>
+              </tr>
+              <tr>
+                <td><span class="tag">@deprecated</span></td>
+                <td>Document that this is no longer the preferred way.</td>
+              </tr>
+              <tr>
+                <td><span class="tag">@example</span></td>
+                <td>Provide an example of how to use a documented item.</td>
+              </tr>
+              <tr>
+                <td><span class="tag">@default</span> (synonyms: @defaultvalue)</td>
+                <td>Document the default value.</td>
+              </tr>
+              <tr>
+                <td><span class="tag">@class</span> (synonyms: @constructor)</td>
+                <td>This function is intended to be called with the "new" keyword.</td>
+              </tr>
+              <tr>
+                <td><span class="tag">@private</span></td>
+                <td>This symbol is meant to be private.</td>
+              </tr>
+              <tr>
+                <td><span class="tag">@public</span></td>
+                <td>This symbol is meant to be public.</td>
+              </tr>
+              <tr>
+                <td><span class="tag">@version</span></td>
+                <td>Documents the version number of an item.</td>
+              </tr>
+            </table>
+            <p class="full-information">
+              More information <a href="https://code-examples.net/en/docs/jsdoc/index">https://code-examples.net/en/docs/jsdoc/index</a>
+            </p>
+          </section>
+          <section class="slide8">
+            <img class="img-title" src="lib/img/documentationjs.png" alt="documentationjs">
+            <p class="console"><code>$ npm install documentation</code></p>
+            <pre>
+              <code>// package.json
+  {
+    ...
+    "script": {
+      "docs: build": "documentation build src/** -f html -o docs"
+    }
+  }</code></pre>
+            <p class="console"><code>$ npm run docs:build</code></p>
+          </section>
+          <section class="slide9">
+            <h3>Remember most of the time, you will be the one to maintain code</h3>
+            <img src="lib/img/func1.jpg" alt="Maintaining code">
+          </section>
+          
+        </div>
+    </div>
+
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true }
+        ]
+      });
+    </script>
+  </body>
+</html>

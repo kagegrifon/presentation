@@ -1,0 +1,81 @@
+.slide {
+  font-family: 'Roboto', sans-serif;
+}
+
+.slide h2,
+.slide h3 {
+  margin-top: 2.5rem;
+  text-transform: none;
+}
+
+.slide img {
+  width: 40rem;
+}
+
+.slide .example {
+  position: relative;
+}
+
+.slide .example pre {
+  margin-top: 0;
+}
+
+.slide1 img {
+  width: 23rem;
+}
+
+.slide5 .doclet {
+  position: absolute;
+  top: 0rem;
+  left: 40rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 11rem;
+  font-weight: lighter;
+}
+
+.slide5 .doclet .text {
+  position: relative;
+  transform: translateY(25%);
+
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+.slide7 h3 {
+  margin-top: 0;
+}
+
+.slide7 .tags-table {
+  font-size: 1.5rem;
+}
+
+.slide7 .tags-table td {
+  vertical-align: middle;
+}
+
+.slide7 .tags-table .tag {
+  color: yellow;
+}
+
+.slide7 .full-information {
+  font-size: 1.7rem;
+}
+
+.slide8 .img-title {
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+.slide8 .console {
+  background-color: black;
+}
+
+.slide9 img {
+  width: 35rem;
+}
